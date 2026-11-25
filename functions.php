@@ -93,3 +93,29 @@ add_shortcode( 'dx_reading_time', function () {
 	/* translators: %d: minutes */
 	return esc_html( sprintf( _n( '%d min read', '%d min read', dermatex_reading_time(), 'dermatex' ), dermatex_reading_time() ) );
 } );
+
+/**
+ * Replace the [dx_reading_time] token while the block renders, so it uses the
+ * post of the current query-loop iteration (shortcodes run after the loop ends).
+ */
+add_filter( 'render_block_core/paragraph', function ( $content, $block ) {
+	if ( false === strpos( $content, '[dx_reading_time]' ) ) {
+		return $content;
+	}
+	$post_id = $block['context']['postId'] ?? get_the_ID();
+	$mins    = dermatex_reading_time( $post_id );
+	/* translators: %d: minutes */
+	$label   = sprintf( _n( '%d min read', '%d min read', $mins, 'dermatex' ), $mins );
+	return str_replace( '[dx_reading_time]', esc_html( $label ), $content );
+}, 10, 2 );
+
+/**
+ * "More from the journal" on a single article should not list the article itself.
+ */
+add_filter( 'query_loop_block_query_vars', function ( $query, $block ) {
+	$class = $block->parsed_block['attrs']['className'] ?? '';
+	if ( false !== strpos( $class, 'dx-related' ) && is_singular( 'post' ) ) {
+		$query['post__not_in'] = array( get_queried_object_id() );
+	}
+	return $query;
+}, 10, 2 );

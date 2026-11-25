@@ -1,0 +1,18 @@
+.dx-compare { --dx-pos: 50%; margin: 0; }
+.dx-compare__stage { position: relative; aspect-ratio: 4 / 3; border-radius: 16px; overflow: hidden; background: #ddd; touch-action: pan-y; }
+.dx-compare__pane { position: absolute; inset: 0; }
+.dx-compare__pane img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 0; }
+.dx-compare__before { clip-path: inset(0 calc(100% - var(--dx-pos)) 0 0); }
+.dx-compare__ph { margin: 0; position: absolute; inset: auto 0 0 0; padding: 24px; font-size: 14px; line-height: 22px; color: var(--wp--preset--color--muted, #39393A); }
+.dx-compare__before { background: var(--wp--preset--color--silver, #A3A3A3); }
+.dx-compare__after { background: #ECECEA; }
+.dx-compare__label { position: absolute; top: 16px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; background: var(--wp--preset--color--canvas, #FAF8F0); color: var(--wp--preset--color--ink, #111B2E); padding: 4px 12px; border-radius: 999px; }
+.dx-compare__label--before { left: 16px; }
+.dx-compare__label--after { right: 16px; }
+.dx-compare__handle { position: absolute; top: 50%; left: var(--dx-pos); width: 56px; height: 56px; margin: -28px 0 0 -28px; border-radius: 50%; background: var(--wp--preset--color--canvas, #FAF8F0); color: var(--wp--preset--color--ink, #111B2E); display: grid; place-items: center; box-shadow: 0 4px 16px rgba(17,27,46,.08); pointer-events: none; }
+.dx-compare__handle svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.dx-compare__stage::before { content: ""; position: absolute; z-index: 1; top: 0; bottom: 0; left: var(--dx-pos); width: 2px; margin-left: -1px; background: var(--wp--preset--color--canvas, #FAF8F0); pointer-events: none; }
+.dx-compare__handle { z-index: 2; }
+.dx-compare__range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; z-index: 3; }
+.dx-compare__range:focus-visible ~ .dx-compare__handle, .dx-compare__stage:has(.dx-compare__range:focus-visible) .dx-compare__handle { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--wp--preset--color--primary, #111B2E); }
+.dx-compare__caption { font-size: 14px; margin-top: 8px; color: var(--wp--preset--color--muted, #39393A); }

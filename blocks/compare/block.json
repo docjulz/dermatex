@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "dermatex/compare",
+	"title": "Before / After Compare",
+	"category": "media",
+	"icon": "image-flip-horizontal",
+	"description": "Drag-to-compare before and after photos.",
+	"keywords": ["before", "after", "compare", "slider"],
+	"textdomain": "dermatex",
+	"attributes": {
+		"beforeId": { "type": "number" },
+		"beforeUrl": { "type": "string", "default": "" },
+		"beforeAlt": { "type": "string", "default": "" },
+		"afterId": { "type": "number" },
+		"afterUrl": { "type": "string", "default": "" },
+		"afterAlt": { "type": "string", "default": "" },
+		"beforeLabel": { "type": "string", "default": "Before" },
+		"afterLabel": { "type": "string", "default": "After" },
+		"caption": { "type": "string", "default": "Drag to compare" },
+		"placeholderBefore": { "type": "string", "default": "Photo: before. Client to supply." },
+		"placeholderAfter": { "type": "string", "default": "Photo: after. Client to supply." },
+		"start": { "type": "number", "default": 50 }
+	},
+	"supports": { "html": false, "align": ["wide", "full"], "spacing": { "margin": true } },
+	"editorScript": "file:./editor.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

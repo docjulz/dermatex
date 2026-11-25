@@ -1,0 +1,107 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<!-- wp:group {"tagName":"main","layout":{"type":"default"}} -->
+<main class="wp-block-group">
+
+<!-- wp:group {"tagName":"section","className":"dx-section dx-section--canvas dx-journal-intro","layout":{"type":"constrained","wideSize":"1312px"}} -->
+<section class="wp-block-group dx-section dx-section--canvas dx-journal-intro">
+<!-- wp:group {"align":"wide","className":"dx-stack","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide dx-stack">
+<!-- wp:paragraph {"className":"dx-crumbs"} -->
+<p class="dx-crumbs"><a href="/">Home</a> / Journal</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"dx-eyebrow"} -->
+<p class="dx-eyebrow">The Dermatex Journal</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">Good hair. A little guidance.</h1>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"className":"dx-lede"} -->
+<p class="dx-lede">Thoughtful advice, everyday care and a more personal perspective on hair replacement. Wherever you are in your journey, start here.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"dx-section dx-section--soft dx-featured","layout":{"type":"constrained","wideSize":"1312px"}} -->
+<section class="wp-block-group dx-section dx-section--soft dx-featured">
+<!-- wp:query {"queryId":11,"query":{"perPage":1,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":false},"align":"wide"} -->
+<div class="wp-block-query alignwide">
+<!-- wp:post-template -->
+<!-- wp:group {"className":"dx-grid dx-grid--2 dx-featured__inner","layout":{"type":"default"}} -->
+<div class="wp-block-group dx-grid dx-grid--2 dx-featured__inner">
+<!-- wp:group {"className":"dx-stack","layout":{"type":"default"}} -->
+<div class="wp-block-group dx-stack">
+<!-- wp:group {"className":"dx-meta","layout":{"type":"flex","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"8px"}}} -->
+<div class="wp-block-group dx-meta"><!-- wp:paragraph {"className":"dx-eyebrow"} -->
+<p class="dx-eyebrow">Featured /</p>
+<!-- /wp:paragraph --><!-- wp:post-terms {"term":"category","separator":" · ","style":{"typography":{"fontWeight":"700","letterSpacing":"0.12em","textTransform":"uppercase","fontSize":"12px"}}} /--></div>
+<!-- /wp:group -->
+<!-- wp:post-title {"level":2,"isLink":true} /-->
+<!-- wp:post-excerpt {"moreText":"","excerptLength":30} /-->
+<!-- wp:group {"className":"dx-meta","layout":{"type":"flex","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"8px"}}} -->
+<div class="wp-block-group dx-meta"><!-- wp:post-date {"fontSize":"caption"} /--><!-- wp:paragraph {"fontSize":"caption"} -->
+<p class="has-caption-font-size">· [dx_reading_time]</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+<!-- wp:read-more {"content":"Read the guide →","className":"dx-readmore"} /-->
+</div>
+<!-- /wp:group -->
+<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"border":{"radius":"16px"}}} /-->
+</div>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+</div>
+<!-- /wp:query -->
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"dx-section dx-section--canvas","layout":{"type":"constrained","wideSize":"1312px"}} -->
+<section class="wp-block-group dx-section dx-section--canvas">
+
+<!-- wp:group {"align":"wide","className":"dx-stack dx-filter","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide dx-stack dx-filter">
+<!-- wp:heading -->
+<h2 class="wp-block-heading">A little knowledge. A lot more confidence.</h2>
+<!-- /wp:heading -->
+<!-- wp:search {"label":"Search articles","buttonText":"Search","placeholder":"Search articles","query":{"post_type":"post"},"className":"dx-search"} /-->
+<!-- wp:categories {"className":"dx-cats"} /-->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:query {"queryId":12,"query":{"perPage":6,"pages":0,"offset":1,"postType":"post","order":"desc","orderBy":"date","inherit":false},"align":"wide"} -->
+<div class="wp-block-query alignwide">
+<!-- wp:post-template {"className":"dx-cards","layout":{"type":"grid","columnCount":3}} -->
+<!-- wp:group {"className":"dx-card dx-article-card","layout":{"type":"default"}} -->
+<div class="wp-block-group dx-card dx-article-card">
+<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"border":{"radius":{"topLeft":"16px","topRight":"16px","bottomLeft":"0px","bottomRight":"0px"}}}} /-->
+<!-- wp:group {"className":"dx-article-card__body dx-stack","layout":{"type":"default"}} -->
+<div class="wp-block-group dx-article-card__body dx-stack">
+<!-- wp:post-terms {"term":"category","style":{"typography":{"fontWeight":"700","letterSpacing":"0.12em","textTransform":"uppercase","fontSize":"12px"}}} /-->
+<!-- wp:post-title {"level":3,"isLink":true,"fontSize":"heading-5"} /-->
+<!-- wp:group {"className":"dx-meta","layout":{"type":"flex","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"8px"}}} -->
+<div class="wp-block-group dx-meta"><!-- wp:post-date {"fontSize":"caption"} /--><!-- wp:paragraph {"fontSize":"caption"} -->
+<p class="has-caption-font-size">· [dx_reading_time]</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+<!-- wp:read-more {"content":"Read article →","className":"dx-readmore"} /-->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"center"}} -->
+<!-- wp:query-pagination-previous /-->
+<!-- wp:query-pagination-numbers /-->
+<!-- wp:query-pagination-next /-->
+<!-- /wp:query-pagination -->
+</div>
+<!-- /wp:query -->
+
+</section>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"cta-banner"} /-->
+</main>
+<!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
