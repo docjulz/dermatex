@@ -16,6 +16,7 @@ define( 'DERMATEX_URI', get_template_directory_uri() );
  */
 add_action( 'after_setup_theme', function () {
 	add_theme_support( 'editor-styles' );
+	add_editor_style( array( 'style.css', 'assets/css/editor.css' ) );
 	add_theme_support( 'responsive-embeds' );
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'post-thumbnails' );

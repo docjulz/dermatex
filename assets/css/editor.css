@@ -1,0 +1,9 @@
+/* Editor-only helpers: show everything editable, since the front-end JS does not run here. */
+.editor-styles-wrapper .dx-slider { min-height: 0; overflow: visible; background: transparent; }
+.editor-styles-wrapper .dx-slider__track { position: static; display: grid; gap: 16px; }
+.editor-styles-wrapper .dx-slider__slide { position: relative; inset: auto; opacity: 1 !important; visibility: visible !important; min-height: 220px; border-radius: 16px; padding: 24px; }
+.editor-styles-wrapper .dx-slider__controls, .editor-styles-wrapper .dx-slider__dots { display: none; }
+.editor-styles-wrapper .dx-reveal { opacity: 1; transform: none; }
+.editor-styles-wrapper .dx-header { position: static; }
+.editor-styles-wrapper .dx-mobile-bar { display: none; }
+.editor-styles-wrapper { padding-bottom: 0; }

@@ -209,6 +209,6 @@
 		{ "name": "footer", "title": "Footer", "area": "footer" }
 	],
 	"customTemplates": [
-		{ "name": "page-no-title", "title": "Page (no title)", "postTypes": ["page"] }
+		{ "name": "page-no-title", "title": "Full-width page (no title)", "postTypes": ["page"] }
 	]
 }
