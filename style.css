@@ -7,7 +7,7 @@ Description: Custom block theme for Dermatex Hair Replacement Center (Direction 
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.0
-Version: 0.2.2
+Version: 0.3.0
 License: Proprietary
 Text Domain: dermatex
 */
@@ -287,3 +287,11 @@ body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; 
 .dx-chip, .dx-cats a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; background: var(--wp--preset--color--soft); font-weight: 700; font-size: 14px; text-decoration: none; color: var(--wp--preset--color--ink); }
 .dx-chip:hover { background: var(--wp--preset--color--primary); color: var(--wp--preset--color--surface); }
 .dx-cats .cat-item-1 { display: none; } /* hide the default "Uncategorized" category */
+
+/* ---------- v0.3.0: 404 and search ---------- */
+.dx-404 { padding-block: 64px; }
+@media (min-width: 1200px) { .dx-404 { padding-block: 120px; } }
+.dx-404 .dx-search { max-width: 640px; }
+.dx-noresults { max-width: 720px; }
+.wp-block-query-title { margin: 0; }
+.wp-block-search__label { font-weight: 700; font-size: 14px; display: block; margin-bottom: 8px; }

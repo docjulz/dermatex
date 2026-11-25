@@ -1,0 +1,77 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<!-- wp:group {"tagName":"main","layout":{"type":"default"}} -->
+<main class="wp-block-group">
+
+<!-- wp:group {"tagName":"section","className":"dx-section dx-section--canvas dx-404","layout":{"type":"constrained","wideSize":"1312px"}} -->
+<section class="wp-block-group dx-section dx-section--canvas dx-404">
+<!-- wp:group {"align":"wide","className":"dx-stack","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide dx-stack">
+<!-- wp:paragraph {"className":"dx-eyebrow"} -->
+<p class="dx-eyebrow">Page not found</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">We can’t find that page.</h1>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"className":"dx-lede"} -->
+<p class="dx-lede">The link may have moved or been mistyped. No worries. Here are a few good places to start.</p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons -->
+<div class="wp-block-buttons">
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/">Back to the homepage</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-secondary"} -->
+<div class="wp-block-button is-style-secondary"><a class="wp-block-button__link wp-element-button" href="/blog/">Read the journal</a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
+<!-- wp:paragraph -->
+<p>Prefer to talk? Call <a href="tel:+19493052661">(949) 305-2661</a> or <a href="/#contact">book a private consultation</a>.</p>
+<!-- /wp:paragraph -->
+<!-- wp:search {"label":"Search the site","buttonText":"Search","placeholder":"Search articles","query":{"post_type":"post"},"className":"dx-search"} /-->
+</div>
+<!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"dx-section dx-section--soft","layout":{"type":"constrained","wideSize":"1312px"}} -->
+<section class="wp-block-group dx-section dx-section--soft">
+<!-- wp:group {"align":"wide","className":"dx-stack","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide dx-stack">
+<!-- wp:paragraph {"className":"dx-eyebrow"} -->
+<p class="dx-eyebrow">From the journal</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Something helpful while you’re here.</h2>
+<!-- /wp:heading -->
+<!-- wp:query {"queryId":21,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":false}} -->
+<div class="wp-block-query">
+<!-- wp:post-template {"className":"dx-cards","layout":{"type":"grid","columnCount":3}} -->
+<!-- wp:group {"className":"dx-card dx-article-card","layout":{"type":"default"}} -->
+<div class="wp-block-group dx-card dx-article-card">
+<!-- wp:group {"className":"dx-article-card__body dx-stack","layout":{"type":"default"}} -->
+<div class="wp-block-group dx-article-card__body dx-stack">
+<!-- wp:post-terms {"term":"category","style":{"typography":{"fontWeight":"700","letterSpacing":"0.12em","textTransform":"uppercase","fontSize":"12px"}}} /-->
+<!-- wp:post-title {"level":3,"isLink":true,"fontSize":"heading-5"} /-->
+<!-- wp:group {"className":"dx-meta","layout":{"type":"flex","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"8px"}}} -->
+<div class="wp-block-group dx-meta"><!-- wp:post-date {"fontSize":"caption"} /--><!-- wp:paragraph {"fontSize":"caption"} -->
+<p class="has-caption-font-size">· [dx_reading_time]</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+<!-- wp:read-more {"content":"Read article →","className":"dx-readmore"} /-->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+</div>
+<!-- /wp:query -->
+</div>
+<!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"cta-banner"} /-->
+</main>
+<!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
