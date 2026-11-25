@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'DERMATEX_VERSION', '0.1.0' );
+define( 'DERMATEX_VERSION', wp_get_theme()->get( 'Version' ) ?: '0' );
 define( 'DERMATEX_DIR', get_template_directory() );
 define( 'DERMATEX_URI', get_template_directory_uri() );
 
