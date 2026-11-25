@@ -206,7 +206,8 @@
 	},
 	"templateParts": [
 		{ "name": "header", "title": "Header", "area": "header" },
-		{ "name": "footer", "title": "Footer", "area": "footer" }
+		{ "name": "footer", "title": "Footer", "area": "footer" },
+		{ "name": "cta-banner", "title": "Call-to-action band", "area": "uncategorized" }
 	],
 	"customTemplates": [
 		{ "name": "page-no-title", "title": "Full-width page (no title)", "postTypes": ["page"] }
