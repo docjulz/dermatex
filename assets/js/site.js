@@ -15,6 +15,12 @@
 		var slides = Array.prototype.slice.call( root.querySelectorAll( '.dx-slider__slide' ) );
 		if ( ! track || slides.length < 2 ) { return; }
 
+		// Accessibility attributes are added here because the Group block cannot store them.
+		root.setAttribute( 'role', 'region' );
+		root.setAttribute( 'aria-roledescription', 'carousel' );
+		if ( ! root.getAttribute( 'aria-label' ) ) { root.setAttribute( 'aria-label', 'Image slideshow' ); }
+		track.setAttribute( 'aria-live', 'off' );
+
 		var prev   = root.querySelector( '.dx-slider__prev' );
 		var next   = root.querySelector( '.dx-slider__next' );
 		var toggle = root.querySelector( '.dx-slider__toggle' );

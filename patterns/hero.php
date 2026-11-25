@@ -46,10 +46,10 @@
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"dx-slider","layout":{"type":"default"}} -->
-<div class="wp-block-group dx-slider" data-interval="6000" role="region" aria-roledescription="carousel" aria-label="Dermatex clients">
+<div class="wp-block-group dx-slider">
 
 <!-- wp:group {"className":"dx-slider__track","layout":{"type":"default"}} -->
-<div class="wp-block-group dx-slider__track" aria-live="off">
+<div class="wp-block-group dx-slider__track">
 
 <!-- wp:group {"className":"dx-slider__slide","layout":{"type":"default"}} -->
 <div class="wp-block-group dx-slider__slide">
