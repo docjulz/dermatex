@@ -4,7 +4,6 @@
  * Slug: dermatex/hero
  * Categories: dermatex-home
  * Keywords: hero, slider, homepage
- * Block Types: core/post-content
  * Inserter: true
  */
 ?>

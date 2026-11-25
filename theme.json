@@ -210,6 +210,9 @@
 		{ "name": "cta-banner", "title": "Call-to-action band", "area": "uncategorized" }
 	],
 	"customTemplates": [
-		{ "name": "page-no-title", "title": "Full-width page (no title)", "postTypes": ["page"] }
+		{ "name": "page-no-title", "title": "Full-width page (no title)", "postTypes": ["page"] },
+		{ "name": "subpage-info", "title": "Subpage: Informational", "postTypes": ["page"] },
+		{ "name": "subpage-media", "title": "Subpage: Media & stories", "postTypes": ["page"] },
+		{ "name": "subpage-service", "title": "Subpage: Service", "postTypes": ["page"] }
 	]
 }

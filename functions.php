@@ -62,6 +62,18 @@ add_action( 'wp_enqueue_scripts', function () {
 add_action( 'init', function () {
 	register_block_style( 'core/button', array( 'name' => 'secondary', 'label' => __( 'Secondary', 'dermatex' ) ) );
 	register_block_style( 'core/button', array( 'name' => 'gold', 'label' => __( 'Gold', 'dermatex' ) ) );
+
+	// Full-width band backgrounds: select a Group, then Styles > Band.
+	$bands = array(
+		'band-canvas' => __( 'Band: Canvas', 'dermatex' ),
+		'band-white'  => __( 'Band: White', 'dermatex' ),
+		'band-soft'   => __( 'Band: Soft cream', 'dermatex' ),
+		'band-navy'   => __( 'Band: Navy', 'dermatex' ),
+		'band-gold'   => __( 'Band: Gold', 'dermatex' ),
+	);
+	foreach ( $bands as $name => $label ) {
+		register_block_style( 'core/group', array( 'name' => $name, 'label' => $label ) );
+	}
 } );
 
 /**
@@ -70,6 +82,8 @@ add_action( 'init', function () {
 add_action( 'init', function () {
 	register_block_pattern_category( 'dermatex', array( 'label' => __( 'Dermatex', 'dermatex' ) ) );
 	register_block_pattern_category( 'dermatex-home', array( 'label' => __( 'Dermatex Homepage', 'dermatex' ) ) );
+	register_block_pattern_category( 'dermatex-pages', array( 'label' => __( 'Dermatex Subpages', 'dermatex' ) ) );
+	register_block_pattern_category( 'dermatex-sections', array( 'label' => __( 'Dermatex Sections', 'dermatex' ) ) );
 } );
 
 /**
@@ -121,3 +135,44 @@ add_filter( 'query_loop_block_query_vars', function ( $query, $block ) {
 	}
 	return $query;
 }, 10, 2 );
+
+
+/**
+ * [dx_breadcrumb] token (subpage hero): Home / parent pages / current page title.
+ */
+add_filter( 'render_block_core/paragraph', function ( $content ) {
+	if ( false === strpos( $content, '[dx_breadcrumb]' ) ) {
+		return $content;
+	}
+	$post_id = get_the_ID();
+	$items   = array( '<a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'dermatex' ) . '</a>' );
+	foreach ( array_reverse( get_post_ancestors( $post_id ) ) as $ancestor ) {
+		$items[] = '<a href="' . esc_url( get_permalink( $ancestor ) ) . '">' . esc_html( get_the_title( $ancestor ) ) . '</a>';
+	}
+	$items[] = '<span aria-current="page">' . esc_html( get_the_title( $post_id ) ) . '</span>';
+	return '<nav class="dx-crumbs" aria-label="' . esc_attr__( 'Breadcrumb', 'dermatex' ) . '">' . implode( '<span aria-hidden="true"> / </span>', $items ) . '</nav>';
+}, 9 );
+
+/**
+ * Pages built from a "Subpage" starter pattern get the matching page template automatically
+ * (no double title, full-width bands). A template chosen by hand is never overridden.
+ */
+function dermatex_assign_subpage_template( $post_id, $post ) {
+	if ( ! $post || 'page' !== $post->post_type || wp_is_post_revision( $post_id ) ) {
+		return;
+	}
+	$current = get_post_meta( $post_id, '_wp_page_template', true );
+	if ( $current && 'default' !== $current ) {
+		return;
+	}
+	foreach ( array( 'info', 'media', 'service' ) as $kind ) {
+		if ( false !== strpos( (string) $post->post_content, 'dx-subpage--' . $kind ) ) {
+			update_post_meta( $post_id, '_wp_page_template', 'subpage-' . $kind );
+			return;
+		}
+	}
+}
+add_action( 'save_post_page', 'dermatex_assign_subpage_template', 20, 2 );
+add_action( 'rest_after_insert_page', function ( $post ) {
+	dermatex_assign_subpage_template( $post->ID, $post );
+} );

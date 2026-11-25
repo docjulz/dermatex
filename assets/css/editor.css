@@ -7,3 +7,12 @@
 .editor-styles-wrapper .dx-header { position: static; }
 .editor-styles-wrapper .dx-mobile-bar { display: none; }
 .editor-styles-wrapper { padding-bottom: 0; }
+
+/* v0.5.0: subpages. Make everything visible and selectable in the editor. */
+.editor-styles-wrapper .dx-stickybar { position: static; }
+.editor-styles-wrapper .dx-subhero::before { display: none; }
+.editor-styles-wrapper .dx-subhero { min-height: 0; }
+.editor-styles-wrapper .dx-subhero .dx-subhero__bg { position: relative; inset: auto; z-index: auto; height: 200px; margin: 0 0 24px !important; }
+.editor-styles-wrapper .dx-only-mobile { display: block; }
+.editor-styles-wrapper .dx-tocnav .dx-aside-cta { display: block; }
+.editor-styles-wrapper .dx-tile[hidden] { display: flex !important; }
