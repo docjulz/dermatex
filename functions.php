@@ -113,8 +113,9 @@ add_filter( 'render_block_core/paragraph', function ( $content, $block ) {
  * "More from the journal" on a single article should not list the article itself.
  */
 add_filter( 'query_loop_block_query_vars', function ( $query, $block ) {
-	$class = $block->parsed_block['attrs']['className'] ?? '';
-	if ( false !== strpos( $class, 'dx-related' ) && is_singular( 'post' ) ) {
+	// Query block 13 is "More from the journal" in templates/single.html.
+	$query_id = isset( $block->context['queryId'] ) ? (int) $block->context['queryId'] : 0;
+	if ( 13 === $query_id && is_singular( 'post' ) ) {
 		$query['post__not_in'] = array( get_queried_object_id() );
 	}
 	return $query;
