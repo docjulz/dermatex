@@ -16,3 +16,8 @@
 .editor-styles-wrapper .dx-only-mobile { display: block; }
 .editor-styles-wrapper .dx-tocnav .dx-aside-cta { display: block; }
 .editor-styles-wrapper .dx-tile[hidden] { display: flex !important; }
+
+/* v0.5.1: mirror the live page. The editor caps top-level blocks at the 720px content width and adds
+   side padding; the live site lets each section run edge to edge and handles its own inner width. */
+.editor-styles-wrapper .is-root-container.has-global-padding { padding-left: 0 !important; padding-right: 0 !important; }
+.editor-styles-wrapper .is-root-container > :where(.wp-block, .block-list-appender) { max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; }
